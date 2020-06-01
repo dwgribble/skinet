@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Interfaces;
 
 namespace API.Controllers
 {
@@ -18,11 +19,11 @@ namespace API.Controllers
     public class ProductsController : ControllerBase
     {
 
-        private readonly StoreContext _context;
+        private readonly IProductRepository _repo;
 
-        public ProductsController(StoreContext context)
+        public ProductsController(IProductRepository repo)
         {
-            _context = context;
+            _repo = repo;
         }
 
         // below are endpoints
@@ -32,7 +33,9 @@ namespace API.Controllers
         {
             //return "this will be a list of products, plural";
 
-            var products = await _context.Products.ToListAsync();
+            //var products = await _context.Products.ToListAsync();
+
+            var products = await _repo.GetProductsAsync();
 
             return Ok(products);
         }
@@ -45,7 +48,28 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            return await _context.Products.FindAsync(id);
+            // this should return a single product? user selects a 
+            // product from a list of products
+            
+            //return await _context.Products.FindAsync(id);
+
+            return await _repo.GetProductByIdAsync(id);
+        }
+
+        [HttpGet("brands")]
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+        {
+            // can't directly return an IReadOnlyList in asp.netcore
+            // wrap in ok response
+            return Ok(await _repo.GetProductBrandsAsync());
+        }
+
+        [HttpGet("types")]
+        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
+        {
+            // can't directly return an IReadOnlyList in asp.netcore
+            // wrap in ok response
+            return Ok(await _repo.GetProductTypesAsync());
         }
     }
 }

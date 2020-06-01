@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Core.Interfaces;
 
 namespace API
 {
@@ -27,10 +28,12 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         // "Dependency injection container"
         public void ConfigureServices(IServiceCollection services)
-        {
+        {   
+            // ordering of how things fire in here doesn't really matter
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
-            //services.AddDbContext<StoreContext>(x)
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
