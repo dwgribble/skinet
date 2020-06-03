@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Interfaces;
+using Core.Specifications;
+using API.Dtos;
+using AutoMapper;
 
 namespace API.Controllers
 {
@@ -19,25 +22,39 @@ namespace API.Controllers
     public class ProductsController : ControllerBase
     {
 
-        private readonly IProductRepository _repo;
+        private readonly IGenericRepository<Product> _productsRepo;
 
-        public ProductsController(IProductRepository repo)
+        private readonly IGenericRepository<ProductBrand> _productBrandRepo;
+
+        private readonly IGenericRepository<ProductType> _productTypeRepo;
+        private readonly IMapper _mapper;
+
+        // constructor
+        public ProductsController(IGenericRepository<Product> productsRepo,
+        IGenericRepository<ProductBrand> productBrandRepo,
+        IGenericRepository<ProductType> productTypeRepo, IMapper mapper)
         {
-            _repo = repo;
+            _mapper = mapper;
+            _productTypeRepo = productTypeRepo;
+            _productBrandRepo = productBrandRepo;
+            _productsRepo = productsRepo;
         }
 
         // below are endpoints
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts()
         {
             //return "this will be a list of products, plural";
 
             //var products = await _context.Products.ToListAsync();
+            var spec = new ProductsWithTypesAndBrandsSpecification();
 
-            var products = await _repo.GetProductsAsync();
+            var products = await _productsRepo.ListAsync(spec);
 
-            return Ok(products);
+            //return Ok(products);
+            // code below converts an "Entity" to a "DTO"
+            return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
         }
 
         // specify id as route parameter to differentiate in httpget ""{id}""
@@ -46,14 +63,20 @@ namespace API.Controllers
 
         // "dotnet watch run" autosaves and updates as you go, seems messy and risky
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        //public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
             // this should return a single product? user selects a 
             // product from a list of products
-            
-            //return await _context.Products.FindAsync(id);
 
-            return await _repo.GetProductByIdAsync(id);
+            //return await _context.Products.FindAsync(id);
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+
+            //return await _productsRepo.GetEntityWithSpec(spec);
+            var product = await _productsRepo.GetEntityWithSpec(spec);
+
+            //// code below converts an "Entity" to a "DTO"
+            return _mapper.Map<Product, ProductToReturnDto>(product);
         }
 
         [HttpGet("brands")]
@@ -61,7 +84,7 @@ namespace API.Controllers
         {
             // can't directly return an IReadOnlyList in asp.netcore
             // wrap in ok response
-            return Ok(await _repo.GetProductBrandsAsync());
+            return Ok(await _productBrandRepo.ListAllAsync());
         }
 
         [HttpGet("types")]
@@ -69,7 +92,7 @@ namespace API.Controllers
         {
             // can't directly return an IReadOnlyList in asp.netcore
             // wrap in ok response
-            return Ok(await _repo.GetProductTypesAsync());
+            return Ok(await _productTypeRepo.ListAllAsync());
         }
     }
 }

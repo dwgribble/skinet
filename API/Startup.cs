@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Core.Interfaces;
+using AutoMapper;
+using API.Helpers;
 
 namespace API
 {
@@ -31,6 +33,8 @@ namespace API
         {   
             // ordering of how things fire in here doesn't really matter
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
             
@@ -48,6 +52,9 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            // Ordering of middleware is IMPORTANT  - Adding use of static files here
+            // wwwroot folder will eventually hold angular project
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 
