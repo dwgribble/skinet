@@ -8,6 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using Core.Interfaces;
 using AutoMapper;
 using API.Helpers;
+using API.Middleware;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using API.Errors;
+using Microsoft.OpenApi.Models;
+using API.Extensions;
 
 namespace API
 {
@@ -32,11 +38,13 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {   
             // ordering of how things fire in here doesn't really matter
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+            
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+
+            services.AddApplicationServices();
+            services.AddSwaggerDocumentation();
             
         }
 
@@ -44,19 +52,23 @@ namespace API
         // "This is where we add Middleware" Lecture 2.8
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseMiddleware<ExceptionMiddleware>();
+
+            app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
             // Ordering of middleware is IMPORTANT  - Adding use of static files here
             // wwwroot folder will eventually hold angular project
+            // UseStaticFiles hosts image files in wwwroot
             app.UseStaticFiles();
 
             app.UseAuthorization();
+
+            // Swagger middleware extensions were moved to SwaggerServiceExtensions.cs
+
+            app.UseSwaggerDocumentation();
 
             app.UseEndpoints(endpoints =>
             {

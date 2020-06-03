@@ -11,15 +11,16 @@ using Core.Interfaces;
 using Core.Specifications;
 using API.Dtos;
 using AutoMapper;
+using API.Errors;
+using Microsoft.AspNetCore.Http;
 
 namespace API.Controllers
 {
     // First new "class" created in this lecture series, : derives from ControllerBase 
 
     // This is called an "attribute"
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    
+    public class ProductsController : BaseApiController
     {
 
         private readonly IGenericRepository<Product> _productsRepo;
@@ -63,6 +64,8 @@ namespace API.Controllers
 
         // "dotnet watch run" autosaves and updates as you go, seems messy and risky
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         //public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
@@ -74,6 +77,8 @@ namespace API.Controllers
 
             //return await _productsRepo.GetEntityWithSpec(spec);
             var product = await _productsRepo.GetEntityWithSpec(spec);
+
+            if(product == null) return NotFound(new ApiResponse(404));
 
             //// code below converts an "Entity" to a "DTO"
             return _mapper.Map<Product, ProductToReturnDto>(product);

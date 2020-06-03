@@ -8,6 +8,8 @@
     <PackageReference Include="System.Data.SQLite" Version="1.0.112.2"/>
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0"/>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0"/>
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.4.1"/>
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.4.1"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj"/>
