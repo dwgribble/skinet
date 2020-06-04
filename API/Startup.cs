@@ -45,6 +45,13 @@ namespace API
 
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
+            });
             
         }
 
@@ -63,6 +70,8 @@ namespace API
             // wwwroot folder will eventually hold angular project
             // UseStaticFiles hosts image files in wwwroot
             app.UseStaticFiles();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 

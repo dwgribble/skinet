@@ -22,7 +22,7 @@ namespace Infrastructure.Data
 
         public async Task<Product> GetProductByIdAsync(int id)
         {
-            //throw new System.NotImplementedException();
+            
 
             return await _context.Products
                 .Include(p => p.ProductType)
@@ -32,7 +32,7 @@ namespace Infrastructure.Data
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-            //throw new System.NotImplementedException();
+            
 
             return await _context.Products
                 .Include(p => p.ProductType)
