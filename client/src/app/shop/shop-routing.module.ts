@@ -6,7 +6,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
 const routes: Routes = [
   {path: '', component: ShopComponent},
-  {path: ':id', component: ProductDetailsComponent},
+  {path: ':id', component: ProductDetailsComponent, data: {breadcrumb: {alias: 'productDetails'}}},
 ];
 // basically this class exists largely to make sure that only elements of the web apps content gets loaded
 // when its called.  Lazy loading if the user is in shop load shop if the user is in contact load contact and so on
