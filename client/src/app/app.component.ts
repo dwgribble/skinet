@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BasketService } from './basket/basket.service';
 
 
 @Component({
@@ -11,13 +12,20 @@ export class AppComponent implements OnInit {
   title = 'Nazca Academy';
 
 
-  constructor(  // inject http client here
+  constructor(private basketService: BasketService  // inject http client here
 
     ) {}
 
   ngOnInit(): void {
     // call api in here
-
+    const basketId = localStorage.getItem('basket_id');
+    if (basketId) {
+      this.basketService.getBasket(basketId).subscribe(() => {
+        console.log('initialized basket');
+      }, error => {
+        console.log(error);
+      });
+    }
 
   }
 
