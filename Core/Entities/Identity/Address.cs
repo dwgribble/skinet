@@ -20,7 +20,7 @@ namespace Core.Entities.Identity
 
         // note in the lecture here, have to add [Required] attribute
         // to the property of the string AppUserId but I'm not sure where to put it
-        [Required()]
+        [Required]
         public string AppUserId { get; set; } 
 
         public AppUser AppUser { get; set; }
