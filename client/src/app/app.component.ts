@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from './basket/basket.service';
+import { AccountService } from './account/account.service';
 
 
 @Component({
@@ -12,12 +13,27 @@ export class AppComponent implements OnInit {
   title = 'Nazca Academy';
 
 
-  constructor(private basketService: BasketService  // inject http client here
-
-    ) {}
+  constructor(private basketService: BasketService, private accountService: AccountService) {}
 
   ngOnInit(): void {
     // call api in here
+    this.loadBasket();
+    this.loadCurrentuser();
+
+  }
+
+  loadCurrentuser() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.accountService.loadCurrentuser(token).subscribe(() => {
+        console.log('loaded user');
+      }, error => {
+        console.log(error);
+      });
+    }
+  }
+
+  loadBasket() {
     const basketId = localStorage.getItem('basket_id');
     if (basketId) {
       this.basketService.getBasket(basketId).subscribe(() => {
@@ -26,7 +42,6 @@ export class AppComponent implements OnInit {
         console.log(error);
       });
     }
-
   }
 
 }
