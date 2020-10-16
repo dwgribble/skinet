@@ -26,8 +26,10 @@ namespace Infrastructure.Identity
                         Zipcode = "99999"
                     }
                 };
-
-                await userManager.CreateAsync(user, "Pa$$w0rd");
+                
+                // Changing password here for production publish version
+                // await userManager.CreateAsync(user, "Pa$$w0rd");
+                await userManager.CreateAsync(user, "Nazca20!@");
             }
         }
     }

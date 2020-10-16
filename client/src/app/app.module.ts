@@ -12,10 +12,14 @@ import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import {NgxSpinnerModule} from 'ngx-spinner';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptors';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ValueComponent } from './value/value.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ValueComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptors';
     HttpClientModule,
     CoreModule,
     HomeModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ModalModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

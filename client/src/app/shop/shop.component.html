@@ -1,3 +1,4 @@
+
 <div class="container mt-3">
   <div class="row">
 
@@ -11,7 +12,7 @@
 
       </select>
 
-      <h5 class="text-warning ml-3">Brands</h5>
+      <h5 class="text-warning ml-3">Subjects</h5>
         <ul class="list-group my-3">
           <li class="list-group-item"
           *ngFor="let brand of brands"
@@ -21,7 +22,7 @@
 
           </li>
         </ul>
-        <h5 class="text-warning ml-3">Types</h5>
+        <h5 class="text-warning ml-3">Exercises</h5>
         <ul class="list-group my-3">
           <li class="list-group-item" *ngFor="let type of types"
           [class.active]="type.id === this.shopParams.typeId"
@@ -75,3 +76,9 @@
     </section>
   </div>
 </div>
+
+
+
+
+
+

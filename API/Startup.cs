@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Core.Interfaces;
@@ -16,6 +17,7 @@ using Microsoft.OpenApi.Models;
 using API.Extensions;
 using StackExchange.Redis;
 using Infrastructure.Identity;
+using System.IO;
 
 namespace API
 {
@@ -32,22 +34,46 @@ namespace API
             _config = config;
         }
 
-        //  Commented out below line when _config was instantiated and private readonly
-        //public IConfiguration Configuration { get; }
+        public void ConfigureDevelopmentServices(IServiceCollection services)
+        {
+            services.AddDbContext<DataContext>(x => x.UseSqlite(_config.GetConnectionString("DatingAppConnection")));
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // "Dependency injection container"
-        public void ConfigureServices(IServiceCollection services)
-        {   
-            // ordering of how things fire in here doesn't really matter
-            
-            services.AddAutoMapper(typeof(MappingProfiles));
-            services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
             
             services.AddDbContext<AppIdentityDbContext>(x => {
                 x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
             });
+
+            ConfigureServices(services);
+        }
+
+        public void ConfigureProductionServices(IServiceCollection services)
+        {
+            
+            services.AddDbContext<StoreContext>(x => x.UseMySql(_config.GetConnectionString("DefaultConnection")));
+            
+            services.AddDbContext<AppIdentityDbContext>(x => {
+                x.UseMySql(_config.GetConnectionString("IdentityConnection"));
+            });
+
+            ConfigureServices(services);
+        }
+
+        //  Commented out below line when _config was instantiated and private readonly
+        
+                //public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // "Dependency injection container"
+        public void ConfigureServices(IServiceCollection services)
+        {   
+            services.AddDbContext<DataContext>(x => x.UseSqlite(_config.GetConnectionString("DatingAppConnection")));
+
+            // ordering of how things fire in here doesn't really matter
+            
+            services.AddAutoMapper(typeof(MappingProfiles));
+            services.AddControllers();
+            
             
             services.AddSingleton<IConnectionMultiplexer>(c => {
                 var configuration = ConfigurationOptions.Parse(_config.GetConnectionString("Redis"), true);
@@ -82,6 +108,12 @@ namespace API
             // wwwroot folder will eventually hold angular project
             // UseStaticFiles hosts image files in wwwroot
             app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions 
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "Content")
+                ), RequestPath = "/content"                
+            });
 
             app.UseCors("CorsPolicy");
 
@@ -95,6 +127,7 @@ namespace API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapFallbackToController("Index", "Fallback");
             });
         }
     }

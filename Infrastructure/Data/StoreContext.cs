@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Entities;
 using System.Reflection;
+using Infrastructure.Models;
 
 namespace Infrastructure.Data
 {
@@ -23,6 +24,8 @@ namespace Infrastructure.Data
         public DbSet<ProductBrand> ProductBrands { get; set; }
 
         public DbSet<ProductType> ProductTypes { get; set; }
+
+        public DbSet<Value> Values { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

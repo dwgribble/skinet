@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // call api in here
-    this.loadBasket();
+    // this.loadBasket();
     this.loadCurrentuser();
 
   }

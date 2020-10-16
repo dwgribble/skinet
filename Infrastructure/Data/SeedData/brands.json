@@ -1,26 +1,26 @@
 [
   {
     "Id": 1,
-    "Name": "Angular"
+    "Name": "Learn to Code"
   },
   {
     "Id": 2,
-    "Name": "NetCore"
+    "Name": "Learn Algorithms"
   },
   {
     "Id": 3,
-    "Name": "VS Code"
+    "Name": "Science"
   },
   {
     "Id": 4,
-    "Name": "React"
+    "Name": "Technology"
   },
   {
     "Id": 5,
-    "Name": "Typescript"
+    "Name": "Engineering"
   },
   {
     "Id": 6,
-    "Name": "Redis"
+    "Name": "Math"
   }
 ]

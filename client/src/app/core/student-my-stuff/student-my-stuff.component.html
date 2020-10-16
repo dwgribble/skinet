@@ -1,0 +1,89 @@
+
+<body>
+
+  <div class="content-area">
+
+
+    <div class="center-image-container">
+
+      <img class="center-image" src="assets/images/ninja.png">
+
+    </div>
+
+    <div class="choose-text">
+
+      <p>Choose your new Avatar</p>
+
+    </div>
+
+    <div class="center-container">
+
+
+      <table class="center">
+
+
+        <tbody>
+
+          <tr>
+            <td> <img src="assets/images/Cat.png"> </td>
+            <td> <img src="assets/images/Gem.png"> </td>
+            <td> <img src="assets/images/ninja.png"> </td>
+          </tr>
+
+          <tr>
+            <td> <img src="assets/images/Dino.png"> </td>
+            <td> <img src="assets/images/LightningBolt.png"> </td>
+            <td> <img src="assets/images/fox.png"> </td>
+          </tr>
+
+          <tr>
+            <td> <img src="assets/images/Dolphin.png"> </td>
+            <td> <img src="assets/images/Girl.png"> </td>
+            <td> <img src="assets/images/knight.png"> </td>
+          </tr>
+
+
+
+
+        </tbody>
+
+      </table>
+
+
+
+    </div><!-- /center-container -->
+
+    <div>
+
+    </div>
+
+  </div><!-- /content-area -->
+
+
+  <footer>
+    <p>2020 - Nazca Academy  ©</p>
+  </footer>
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const rows = document.querySelectorAll("tr[data-href]");
+
+      rows.forEach(row => {
+
+        row.addEventListener("click", () => {
+
+          window.location.href = row.dataset.href;
+
+        });
+      });
+    });
+
+
+  </script>
+
+
+
+</body>

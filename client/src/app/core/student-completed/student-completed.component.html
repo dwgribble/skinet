@@ -1,0 +1,111 @@
+
+<body>
+
+  <div class="content-area group section">
+
+
+    <div class="left-container xhide-small">
+
+      <img class="left-image" src="assets/images/ninja.png">
+
+    </div>
+
+    <div class="center-container">
+
+
+
+      <div class="assignment-header"></div><table>
+
+
+          <thead>
+            <tr>
+              <th>Assignment</th>
+              <th>Status</th>
+              <th>Category</th>
+              <th>Type</th>
+              <th>Due Date</th>
+            </tr><tr>
+          </tr></thead>
+
+
+        <tbody>
+          <tr data-href="assets/images/Assignment.pdf">
+            <td>Code Learner 2</td>
+            <td>Completed</td>
+            <td>Technology</td>
+            <td>Algorithm Learning</td>
+            <td>2020-08-28</td>
+          </tr>
+
+          <tr data-href="assets/images/Assignment.pdf">
+            <td>Focus on 7</td>
+            <td class="assignedx">Completed</td>
+            <td>Math</td>
+            <td>Multiplication</td>
+            <td>2020-08-28</td>
+          </tr>
+
+          <tr data-href="assets/images/Assignment.pdf">
+            <td>Code Learner 1</td>
+            <td>Completed</td>
+            <td>Technology</td>
+            <td>Algorithm Learning</td>
+            <td>2020-08-23</td>
+          </tr>
+
+                      <tr data-href="assets/images/Assignment.pdf">
+            <td>Division by 5</td>
+            <td class="">Completed</td>
+            <td>Math</td>
+            <td>Division</td>
+            <td>2020-08-23</td>
+                      </tr>
+
+                      <tr data-href="assets/images/Assignment.pdf">
+            <td>Division by 4</td>
+            <td class="">Completed</td>
+            <td>Math</td>
+            <td>Division</td>
+            <td>2020-08-21</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+
+
+    </div><!-- /center-container -->
+
+
+
+  </div><!-- /content-area -->
+
+
+  <footer>
+    <p>2020 - Nazca Academy  ©</p>
+  </footer>
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const rows = document.querySelectorAll("tr[data-href]");
+
+      rows.forEach(row => {
+
+        row.addEventListener("click", () => {
+
+          window.location.href = row.dataset.href;
+
+        });
+      });
+    });
+
+
+  </script>
+
+
+
+</body>

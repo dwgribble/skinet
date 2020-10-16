@@ -1,0 +1,326 @@
+html {
+	background-color: #eec600;
+	line-height: 1.7;
+}
+
+body {
+	font-family: Calibri, 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', sans-serif;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+.section {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+header {
+	padding-top: 50px;
+	color: #FFF;
+	background-color: #eec600;
+	padding-bottom: 40px;
+}
+
+header h1 {
+	margin: 0;
+	font-weight: normal;
+	font-size: 165%;
+}
+
+header p {
+	font-size: 90%;
+	margin: 0;
+}
+
+
+.studentName {
+	padding-top: 15px;
+	color: #000000;
+	font-weight: bold;
+	padding-left: 20%;
+}
+
+.NALogo {
+	padding-left: 70px;
+}
+
+/* ------------------------------------ Full Page for the Teacher -----------------------------------------*/
+
+.tFullPage {
+	max-width: 940px;           /* This causes the text to wrap after 940 pixels rather than the full page */
+	/* 1/2 Sceen = 470 pixels          										   */
+	/* 1/4 Sceen = 235 pixels          										   */
+
+	margin-left: auto;          /* The Margin-Lef and Right will 'center' the text                         */
+	margin-right: auto;
+	background-color: #FFFFFF;
+
+	font-weight: bold;
+
+
+}
+
+/* ------------------------------------- Teacher Main Navigation Container --------------------------------*/
+
+
+.tMainNavBorder {                             /* this creates a border line below the buttons              */
+	/* border-bottom: 5px solid #eec600; */
+	border-bottom: 5px solid #000;
+
+}
+
+.tMainNavLinks {
+	padding-left: 0px;							/* This was needed to left justify the buttons				*/
+}
+
+.tMainNavLinks li {
+	list-style: none;
+	float: left;								/* This aligns buttons to the right rather than stacking   */
+												/* Remove space between buttons margin-right: 5px;  */
+}
+
+.tMainNavLinks a {
+
+	display: inline-block;
+	color: #000;
+	background-color: #eec600;
+	border: 2px solid #000;
+	font-size: 90%;
+	font-weight: normal;
+	width: 103px;
+	height: 25px;
+	border-radius: 7px 7px 0px 0px;				/* forces round corners ONLY on the top                     */
+	text-align: center;
+	vertical-align: middle;
+
+}
+
+.tMainNavLinks a:hover {
+	background-color: #000;
+	color: #eec600;
+}
+
+/* ------------------------------------ Teacher Screen Title Container ------------------------------------*/
+.tScreenTitleContainer {
+	padding-top: 30px;
+	font-size: 175%;
+
+}
+
+/* ------------------------------------ Teacher Local Navigation Container --------------------------------*/
+.tLocalNavContainer {
+
+	padding-bottom: 30px;
+}
+
+.tLocalNavBorder {                             /* this creates a border line above the buttons             */
+    border-top: 5px solid #eec600;
+
+}
+
+.tLocalNavLinks {
+	padding-left: 0px;							/* This was needed to left justify the buttons				*/
+}
+
+.tLocalNavLinks li {
+	list-style: none;
+	float: left;								/* This aligns buttons to the right rather than stacking   */
+	margin-right: 5px;
+}
+
+.tLocalNavLinks a {
+
+	display: inline-block;
+	color: #FFF;
+	padding: 5px 5px;
+	background-color: #234199;
+	font-weight: normal;
+	width: 100px;
+	height: 45px;
+	border-radius: 5px;							/* forces round corners                                    */
+	text-align: center;
+	line-height: 20px;
+	vertical-align: middle;
+
+
+
+}
+
+/* ------------------------------------ Main Content Container for Teacher --------------------------------*/
+
+
+.tMainBorder {                             /* this creates a border line above and below the text */
+    border-top: 5px solid #eec600;
+											/* Border at bottom is unused for now                          */
+											/* border-bottom: 3px solid black;							   */
+
+}
+
+.tMainCol1 {                    /* This is the first TEXT Column                                           */
+    width: 18%;
+    float: left;
+	padding-right: 15px;
+	padding-top: 30px;
+}
+
+.tMainCol1 p {
+	height: 37px;
+}
+
+.tMainCol2 {                    /* This is the first Column of input forms                                 */
+    width: 25%;
+    float: left;
+	padding-right: 10px;
+	padding-top: 30px;
+}
+
+.tMainCol3 {                    /* This is the second TEXT Column                                         */
+    width: 18%;
+	float: left;
+	padding-left: 45px;
+	padding-right: 10px;
+	padding-top: 30px;
+}
+
+.tMainCol3 p {
+	height: 37px;
+}
+
+
+.tMainCol4 {                    /* This is the second Column of input forms                               */
+    width: 25%;
+    float: left;
+	padding-right: 20px;
+	padding-top: 30px;
+}
+
+/* ------------------------------------       Table Definitions            ------------------------------*/
+
+.tClassTable {
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.tClassTable th {
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	/* display: block; */
+	color: #000000;
+	/* padding: 10px 20px; */
+	background-color: #eec600;
+	/*max-width: 250px; */
+	border: 1.5px solid #000000;
+	height: 50%;
+	text-align: center;
+	border-radius: 3px;              /*  Rounds the Corners */
+
+}
+
+.tClassTable td {
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	/* display: block;  */					/* this forces each elemnet on a new row */
+	color: #000000;
+	/* padding: 10px 20px; */
+	background-color: #f2f2f2;
+	/* border-color: #eec600; */
+	/* border-width: 20px; */
+	border: 2px solid #eec600;
+	/*max-width: 250px; */
+	height: 50%;
+	text-align: center;
+	border-radius: 3px;              /*  Rounds the Corners */
+
+}
+
+td:nth-child(2)
+{
+	  /* background-color: #eec600; */
+	  /* opacity: 0.5; */
+	  background: rgba(35, 114, 167, 0.5);
+	  border: 1.5px solid #eec600;
+}
+
+
+
+/* ------------------------------------       Form Fromatting             ------------------------------*/
+
+input[type=email],                          /* Sets the styling for the email box                       */
+input[type=password],                       /*      and the password form                               */
+input[type=text],                           /*      for future use                                      */
+input[type=number],                         /*      for future use                                      */
+input[type=tel],                            /*      for future use                                      */
+select {                                    /*      This is the DROPDOWN BOX                            */
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 40px;
+/*    font-family: Tahoma, sans-serif;                                                                  */
+    font-size: 85%;
+    margin-bottom: 15px;
+/*    outline: none;                        Optional - Chrome will add an outline                       */
+    border: 3px solid #eec600;
+    border-radius: 5px;                     /* This ROUNDS THE EDGES of the input box                         */
+}
+
+/* ---------------------------------END Main Container for Teacher Content --------------------------------*/
+
+
+footer {
+	text-align: center;
+	font-size: 85%;
+	color: #000000;
+	font-weight: bold;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.col {
+	width: 100%;
+	float: left;
+	padding-right: 20px;
+	box-sizing: border-box;
+}
+
+.col-sm-4 {width: 33.332%;}
+
+
+/*       end                 end                 end    */
+/*                                 !!! This code is prefered to clear tables, columns, floats, etc.  Use always */
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group{
+    zoom: 1;
+}
+/*                              End Common Code - use the 'group' qualifier in classes in the html -  Use always */

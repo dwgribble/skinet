@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { IUser } from 'src/app/shared/models/user';
+import { AccountService } from 'src/app/account/account.service';
 
 @Component({
   selector: 'app-test-error',
@@ -10,10 +13,12 @@ import { environment } from 'src/environments/environment';
 export class TestErrorComponent implements OnInit {
   baseUrl = environment.apiUrl;
   validationErrors: any;
+  currentUser$: Observable<IUser>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private accountService: AccountService) { }
 
   ngOnInit(): void {
+    this.currentUser$ = this.accountService.currentUser$;
   }
 
   get404Error() {

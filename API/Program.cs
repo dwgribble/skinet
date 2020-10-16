@@ -31,6 +31,11 @@ namespace API
                 var loggerFactory = services.GetRequiredService<ILoggerFactory>();
                 try
                 {
+                    //var userSampleContext = services.GetRequiredService<DataContext>();
+                    //await userSampleContext.Database.MigrateAsync();
+                    //await Seed.SeedAsync(context, loggerFactory);
+                    //await Seed.SeedUsersAsync(userSampleContext, loggerFactory);
+
                     var context = services.GetRequiredService<StoreContext>();
                     await context.Database.MigrateAsync();
                     await StoreContextSeed.SeedAsync(context, loggerFactory);
@@ -54,8 +59,13 @@ namespace API
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
+                {   
+                    // Use this setup for production push
+                    // 5001 default port is being used by different apps already for the server
+                    webBuilder.UseStartup<Startup>().UseUrls("http://localhost:5010");
+
+                    // Use this setup for development localhost testing and dev in general
+                    //webBuilder.UseStartup<Startup>();
                 });
     }
 }

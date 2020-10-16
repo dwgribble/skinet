@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Core.Entities;
@@ -15,6 +16,7 @@ namespace Infrastructure.Data
         {
             try
             {
+                var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 // 3 if statements to get the json from our 3 json files to
                 // get the data into the database for the site
                 if (!context.ProductBrands.Any())
@@ -22,7 +24,7 @@ namespace Infrastructure.Data
                     // seeding Data then serializing it to be hosted/navigatable via website?
                     // productbrands, product types and product list
                     var brandsData = 
-                        File.ReadAllText("../Infrastructure/Data/SeedData/brands.json");
+                        File.ReadAllText(path + @"/Data/SeedData/brands.json");
 
                     var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
 
@@ -39,7 +41,7 @@ namespace Infrastructure.Data
                     // seeding Data then serializing it to be hosted/navigatable via website?
                     // productbrands, product types and product list
                     var typesData = 
-                        File.ReadAllText("../Infrastructure/Data/SeedData/types.json");
+                        File.ReadAllText(path + @"/Data/SeedData/types.json");
 
                     var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
 
@@ -56,7 +58,7 @@ namespace Infrastructure.Data
                     // seeding Data then serializing it to be hosted/navigatable via website?
                     // productbrands, product types and product list
                     var productsData = 
-                        File.ReadAllText("../Infrastructure/Data/SeedData/products.json");
+                        File.ReadAllText(path + @"/Data/SeedData/products.json");
 
                     var products = JsonSerializer.Deserialize<List<Product>>(productsData);
 

@@ -1,11 +1,77 @@
-<div class="container mt-5">
-  <button (click)="get500Error()" class="btn btn-outline-primary mr-3">Test 500 Error</button>
-  <button (click)="get400Error()" class="btn btn-outline-primary mr-3">Test 400 Error</button>
-  <button (click)="get404Error()" class="btn btn-outline-primary mr-3">Test 404 Error</button>
-  <button (click)="get400ValidationError()" class="btn btn-outline-primary mr-3">Test 400 Validation Error</button>
-  <div class="row mt-5" *ngIf="validationErrors">
-    <ul class="text-danger">
-      <li *ngFor="let error of validationErrors">{{error}}</li>
-    </ul>
-  </div>
+
+	<!--<body>-->
+  <div style="margin-top: 105px;">
+    <div class="d-flex justify-content-center btn-group-lg">
+      <button (click)="get500Error()" class="btn btn-outline-primary ml-3 text-white"
+      style="background-color: #e46c0a;">Science</button>
+      <button (click)="get400Error()" class="btn btn-outline-primary ml-3 text-white"
+      style="background-color: #b3a2c7;">Technology</button>
+      <button (click)="get404Error()" class="btn btn-outline-primary ml-3 text-white"
+      style="background-color: #62ca1c;">Engineering</button>
+      <button (click)="get400ValidationError()" class="btn btn-outline-primary ml-3 text-white"
+      style="background-color: #e90505;">Math</button>
+      <!--<div class="row mt-5" *ngIf="validationErrors">
+        <ul class="text-danger">
+          <li *ngFor="let error of validationErrors">{{error}}</li>
+        </ul>
+      </div>-->
+    </div>
+
+			<div class="container mr-5">
+
+          <img class="mx-auto left-image" src="assets/images/ninja.png">
+
+        <div class="btn-group-vertical btn-group-lg">
+
+
+
+					<!--<div class="xcol-lg-5">				 rh - removed the class="col-lg-5 col" -->
+
+            <button routerLink="/student-my-todo" class="btn btn-secondary text-white"
+            style="background-color: #eec600;">To-Do</button>
+						<!--<a style="background-color: #eec600;", href="Student.ToDo.html">To-Do</a>-->
+
+					<!--</div>  /col-->
+
+					<br>
+
+					<!--<div class="xcol-lg-5">				 rh - removed the class="col-lg-5 col" -->
+
+            <button routerLink="/student-completed" class="btn btn-secondary text-white"
+            style="background-color: #bfbfbf;">Completed</button>
+						<!--<a style="background-color: #bfbfbf;", href="Student.Completed.html">Completed</a>-->
+
+					<!--</div>  /col-->
+
+					<br>
+
+					<!--<div class="xcol-lg-5">				 rh - removed the class="col-lg-5 col" -->
+
+            <button routerLink="/student-my-stuff" class="btn btn-secondary text-white"
+            style="background-color: #e90505;">My Stuff</button>
+						<!--<a style="background-color: #e90505;", href="Student.MyStuff.html">My Stuff</a>-->
+
+					<!--</div>  /col-->
+
+
+          <!-- /row -->
+
+
+
+
+        </div><!-- /center-container -->
+
+			</div>
+
+
+
+
+		<footer>
+			<p>2020 - Nazca Academy  &copy;</p>
+		</footer>
+
+  <!--</body>-->
+
 </div>
+
+

@@ -1,0 +1,145 @@
+<html><head>
+  <meta charset="utf-8">
+  <title>Nazca Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="css/Teacher.ManageStudent.css">-->
+</head>
+
+<body>
+
+  <div class="tFullPage">
+
+
+    <br>
+
+    <!-- -----------------------------       Teacher Main Navigation Element ---------------------------------- -->
+
+    <div class="tMainNavContainer group section">
+
+      <div class="tMainNavBorder group ">
+
+        <ul class="tMainNavLinks">
+
+          <li> <a routerLink="/teacher-home" routerLinkActive="active">Home</a></li>
+          <li> <a routerLink="/teacher-class-home" routerLinkActive="active">Classes</a></li>
+          <li> <a routerLink="/teacher-manage-assignment" routerLinkActive="active">Assignments</a></li>
+          <li> <a routerLink="/shop" routerLinkActive="active">Activities</a></li>
+          <li> <a routerLink="/teacher-toolbox" routerLinkActive="active">Toolbox</a></li>
+          <li> <a routerLink="/teacher-manage-student" routerLinkActive="active">Administration</a></li>
+          <li> <a href="Teacher.Home.html">Help</a></li>
+          <li> <a>Coming Soon</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- ----------------------------       Teacher Screen Title Banner      ---------------------------------- -->
+
+    <div class="tScreenTitleContainer group section">
+
+        <p>Student Management Screen</p>
+    </div>
+
+    <!-- ----------------------------       Teacher Local Navigation Element ---------------------------------- -->
+
+    <div class="tLocalNavContainer group section">
+
+      <div class="tLocalNavBorder group ">
+
+        <ul class="tLocalNavLinks group">
+
+          <li> <a>Save / Update</a></li>
+          <li> <a>View Previous</a></li>
+          <li> <a>View   Next</a></li>
+          <li> <a>New Student</a></li>
+          <li> <a>View Class</a></li>
+          <li> <a>Student Assignments</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- ----------------------------       Teacher Main Content Element     ---------------------------------- -->
+
+    <div class="tMainContainer group section">
+
+      <div class="tMainBorder group section"></div>
+
+        <div class="tMainCol1">
+
+
+          <p>First Name:</p>
+          <p>Middle Name:</p>
+          <p>Last Name:</p>
+          <p>Grade Level:</p>
+          <p>Email Address:</p>
+          <p>Notes:</p>
+
+        </div> <!-- tMainCol1 -->
+
+        <div class="tMainCol2">
+
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+            <input type="text" name="sFirstName" value="Maria">
+            <input type="text" name="sMiddleName" value="Veronica">
+            <input type="text" name="sLastName" value="Guerola">
+            <input type="text" name="sGradeLevel" value="7">
+            <input type="email" name="sEmailAddress" value="VGuerola@hotmail.com">
+            <input type="text" name="sNotes" value="Student is 2 grade levels ahead">
+
+
+          </form>
+
+        </div>
+
+        <div class="tMainCol3">
+
+
+          <p>Student ID:</p>
+          <p>Status:</p>
+          <p>Class:</p>
+          <p>Password:</p>
+
+
+        </div> <!-- tMainCol3 -->
+
+        <div class="tMainCol4">
+
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+
+            <input type="text" name="sID" value="1000000127">
+            <select name="sStatus">
+              <option>Active</option>
+              <option>Inactive</option>
+            </select>
+            <input type="text" name="sClass" value="Math">
+            <input type="text" name="Password" value="65%r4E">
+
+
+
+          </form>
+
+        </div> <!-- tMainCol4 -->
+
+      </div> <!-- /tMainBorder -->
+
+    </div><!-- /tMainContainer -->
+
+
+
+   <!-- /tFullPage -->
+
+  <br>
+  <br>
+
+  <footer>
+    <p>2020 - Nazca Academy  ©</p>
+  </footer>
+
+
+</body></html>

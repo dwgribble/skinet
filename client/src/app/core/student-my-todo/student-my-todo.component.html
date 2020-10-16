@@ -1,0 +1,102 @@
+<html>
+
+<body>
+
+  <div class="content-area group section">
+
+
+    <div class="left-container xhide-small">
+
+      <img class="left-image" src="assets/images/ninja.png">
+
+    </div>
+
+    <div class="center-container">
+
+
+
+      <div class="assignment-header"></div><table>
+
+
+          <thead>
+            <tr>
+              <th>Assignment</th>
+              <th>Status</th>
+              <th>Category</th>
+              <th>Type</th>
+              <th>Due Date</th>
+            </tr><tr>
+          </tr></thead>
+
+
+        <tbody>
+          <tr data-href="assets/images/Assignment.pdf">
+            <td>Code Learner 3</td>
+            <td>Assigned</td>
+            <td>Technology</td>
+            <td>Algorithm Learning</td>
+            <td>2020-09-01</td>
+          </tr>
+
+          <tr data-href="assets/images/Assignment.pdf">
+            <td>Focus on 7</td>
+            <td class="assignedx">Assigned</td>
+            <td>Math</td>
+            <td>Multiplication</td>
+            <td>2020-09-05</td>
+          </tr>
+
+          <tr data-href="assets/images/Assignment.pdf">
+            <td>Code Learner 4</td>
+            <td>Assigned</td>
+            <td>Technology</td>
+            <td>Algorithm Learning</td>
+            <td>2020-09-15</td>
+          </tr>
+
+
+        </tbody>
+
+      </table>
+
+
+
+    </div><!-- /center-container -->
+
+    <div>
+
+        <br>
+        <br>
+
+    </div>
+
+  </div><!-- /content-area -->
+
+
+  <footer>
+    <p>2020 - Nazca Academy  ©</p>
+  </footer>
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const rows = document.querySelectorAll("tr[data-href]");
+
+      rows.forEach(row => {
+
+        row.addEventListener("click", () => {
+
+          window.location.href = row.dataset.href;
+
+        });
+      });
+    });
+
+
+  </script>
+
+
+
+</body></html>

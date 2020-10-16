@@ -1,0 +1,285 @@
+<html>
+<body>
+
+  <div class="tFullPage">
+
+
+    <br>
+
+    <!-- -----------------------------       Teacher Main Navigation Element ---------------------------------- -->
+
+    <div class="tMainNavContainer group section">
+
+      <div class="tMainNavBorder group ">
+
+        <ul class="tMainNavLinks">
+
+          <li> <a routerLink="/teacher-home" routerLinkActive="active">Home</a></li>
+          <li> <a routerLink="/teacher-class-home" routerLinkActive="active">Classes</a></li>
+          <li> <a routerLink="/teacher-manage-assignment" routerLinkActive="active">Assignments</a></li>
+          <li> <a routerLink="/shop" routerLinkActive="active">Activities</a></li>
+          <li> <a routerLink="/teacher-toolbox" routerLinkActive="active">Toolbox</a></li>
+          <li> <a routerLink="/teacher-manage-student" routerLinkActive="active">Administration</a></li>
+          <li> <a href="Teacher.Home.html">Help</a></li>
+          <li> <a>Coming Soon</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- ----------------------------       Teacher Screen Title Banner      ---------------------------------- -->
+
+    <div class="tScreenTitleContainer group section">
+
+        <p>Classes View and Manage Panel</p>
+    </div>
+
+    <!-- ----------------------------       Teacher Local Navigation Element ---------------------------------- -->
+
+    <div class="tLocalNavContainer group section">
+
+      <div class="tLocalNavBorder group ">
+
+        <ul class="tLocalNavLinks group">
+
+                      <li> <a href="Teacher.ClassAdd.html">Update</a></li>
+                      <li> <a href="Teacher.ClassAdd.html">Add Student</a></li>
+                      <li> <a href="Teacher.ClassAdd.html">Add Assignment</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- ----------------------------       Teacher Main Content Element     ---------------------------------- -->
+
+    <div class="tMainContainer group section">
+
+      <div class="tMainBorder group section"></div>
+
+        <div class="tMainCol1">
+
+                      <p>Teacher:</p>
+                      <p>Class Name:</p>
+                      <p>Subject:</p>
+
+        </div> <!-- tMainCol1 -->
+
+        <div class="tMainCol2">
+
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+                          <input type="text" name="sTeacherName" value="Marta Oses">
+                          <input type="text" name="sClassName" value="Period.2.Math">
+                          <input type="text" name="sSubject" value="Math">
+
+
+          </form>
+
+        </div>
+
+        <div class="tMainCol3">
+
+
+                      <p>Grade Level:</p>
+                      <p>Period:</p>
+
+
+        </div> <!-- tMainCol3 -->
+
+        <div class="tMainCol4">
+
+          <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+
+                          <input type="text" name="sGradeLevel" value="3">
+                          <input type="text" name="sPeriod" value="2">
+
+
+
+          </form>
+
+        </div> <!-- tMainCol4 -->
+
+      </div> <!-- /tMainBorder -->
+
+
+              <!-- ----------------------------       Student Table Elements     ---------------------------------- -->
+
+
+              <div class="tClassTable">
+
+                  <div class="tClassList-header"></div><table>
+
+
+                          <thead>
+                              <tr>
+                                  <th>Nombre de Estudiante</th>
+                                  <th>Assignaciones Abiertas</th>
+                                  <th>Assignanciones Completas</th>
+                                  <th>Puntaje Promedio / Semana</th>
+                                  <th>Tendencia de Puntaje Promedio Semana</th>
+                                  <th>Puntaje Promedio Annual</th>
+                                  <th>Tendencia de Puntaje Promedio Annual</th>
+                                  <th>Activo</th>
+                                  <th>Contrasena</th>
+
+                              </tr><tr>
+                          </tr></thead>
+                       <!-- /tClassList-header -->
+
+
+                          <tbody>
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>Adams, Bryan</td>
+                                  <td>2</td>
+                                  <td>19</td>
+                                  <td>85</td>
+                                  <td>Steady</td>
+                                  <td>85</td>
+                                  <td>Green</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>Arraz, Jan</td>
+                                  <td>1</td>
+                                  <td>20</td>
+                                  <td>88</td>
+                                  <td>Increase</td>
+                                  <td>86</td>
+                                  <td>Green</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>Foster, Jim</td>
+                                  <td>2</td>
+                                  <td>19</td>
+                                  <td>78</td>
+                                  <td>Decrease</td>
+                                  <td>82</td>
+                                  <td>Red</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>Gribble, Darin</td>
+                                  <td>3</td>
+                                  <td>18</td>
+                                  <td>84</td>
+                                  <td>Steady</td>
+                                  <td>85</td>
+                                  <td>Green</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>Guerola, Veronica</td>
+                                  <td>0</td>
+                                  <td>21</td>
+                                  <td>98</td>
+                                  <td>Steady</td>
+                                  <td>98</td>
+                                  <td>Green</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>Hooper, Lucas</td>
+                                  <td>2</td>
+                                  <td>19</td>
+                                  <td>94</td>
+                                  <td>Increase</td>
+                                  <td>95</td>
+                                  <td>Green</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>Hooper, Ron</td>
+                                  <td>2</td>
+                                  <td>19</td>
+                                  <td>88</td>
+                                  <td>Steady</td>
+                                  <td>87</td>
+                                  <td>Green</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>Pascal, Antonio</td>
+                                  <td>2</td>
+                                  <td>19</td>
+                                  <td>77</td>
+                                  <td>Down</td>
+                                  <td>81</td>
+                                  <td>Red</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>West, Ada,</td>
+                                  <td>1</td>
+                                  <td>20</td>
+                                  <td>81</td>
+                                  <td>Steady</td>
+                                  <td>82</td>
+                                  <td>Green</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+
+                              <tr data-href="assets/Assignment.pdf">
+                                  <td>Zulinsky, Debbi</td>
+                                  <td>5</td>
+                                  <td>16</td>
+                                  <td>72</td>
+                                  <td>Decrease</td>
+                                  <td>75</td>
+                                  <td>Red</td>
+                                  <td>Y</td>
+                                  <td>[Hidden]</td>
+
+                              </tr>
+
+                          </tbody>
+
+                       <!-- tClassList-header -->
+
+                  </table>
+
+
+              </div><!-- /tClassTable -->
+
+
+    </div><!-- /tMainContainer -->
+
+
+   <!-- /tFullPage -->
+
+  <br>
+  <br>
+
+  <footer>
+    <p>2020 - Nazca Academy  ©</p>
+  </footer>
+
+
+</body></html>

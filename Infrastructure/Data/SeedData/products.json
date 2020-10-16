@@ -1,146 +1,146 @@
 [
   {
-    "Name": "Angular Speedster Board 2000",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 200,
-    "PictureUrl": "images/products/sb-ang1.png",
+    "Name": "Aprendiz de Código 1",
+    "Description": "Este es un ejercicio de codificación de software lineal que está diseñado para ayudar a los estudiantes de desarrollo de software en etapa temprana a construir y probar un algoritmo. El estudiante construye un programa que permite al jugador navegar por los obstáculos para completar con éxito la tarea.",
+    "Price": 1,
+    "PictureUrl": "images/products/codelearner1thumbnail.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
   {
-    "Name": "Green Angular Board 3000",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
-    "PictureUrl": "images/products/sb-ang2.png",
+    "Name": "Aprendiz de Código 2",
+    "Description": "Este es un ejercicio de codificación de software lineal que está diseñado para ayudar a los estudiantes de desarrollo de software en etapa temprana a construir y probar un algoritmo. El estudiante construye un programa que permite al jugador navegar por los obstáculos para completar con éxito la tarea.",
+    "Price": 1,
+    "PictureUrl": "images/products/codelearner2thumbnail.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
   {
-    "Name": "Core Board Speed Rush 3",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/sb-core1.png",
+    "Name": "Aprendiz de Código 3",
+    "Description": "Este es un ejercicio de codificación de software lineal que está diseñado para ayudar a los estudiantes de desarrollo de software en etapa temprana a construir y probar un algoritmo. El estudiante construye un programa que permite al jugador navegar por los obstáculos para completar con éxito la tarea.",
+    "Price": 1,
+    "PictureUrl": "images/products/codelearner3thumbnail.jpg",
     "ProductTypeId": 1,
-    "ProductBrandId": 2
+    "ProductBrandId": 1
   },
   {
-    "Name": "Net Core Super Board",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 300,
-    "PictureUrl": "images/products/sb-core2.png",
+    "Name": "Aprendiz de Código 4",
+    "Description": "Este es un ejercicio de codificación de software lineal que está diseñado para ayudar a los estudiantes de desarrollo de software en etapa temprana a construir y probar un algoritmo. El estudiante construye un programa que permite al jugador navegar por los obstáculos para completar con éxito la tarea.",
+    "Price": 1,
+    "PictureUrl": "images/products/codelearner4thumbnail.jpg",
     "ProductTypeId": 1,
-    "ProductBrandId": 2
+    "ProductBrandId": 1
   },
   {
-    "Name": "React Board Super Whizzy Fast",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 250,
-    "PictureUrl": "images/products/sb-react1.png",
+    "Name": "Aprendiz de Código 5",
+    "Description": "Este es un ejercicio de codificación de software lineal que está diseñado para ayudar a los estudiantes de desarrollo de software en etapa temprana a construir y probar un algoritmo. El estudiante construye un programa que permite al jugador navegar por los obstáculos para completar con éxito la tarea.",
+    "Price": 1,
+    "PictureUrl": "images/products/codelearner5thumbnail.jpg",
     "ProductTypeId": 1,
-    "ProductBrandId": 4
+    "ProductBrandId": 1
   },
   {
-    "Name": "Typescript Entry Board",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 120,
-    "PictureUrl": "images/products/sb-ts1.png",
+    "Name": "English Code Learner 1",
+    "Description": "This is a linear software coding exercise that is designed to help early stage software development students build and test an algorithm. The student constructs a program that allows the player to navigate obstacles to successfully complete the assignment.",
+    "Price": 1,
+    "PictureUrl": "images/products/CodeLearnerEnglishThumbnail1.png",
     "ProductTypeId": 1,
-    "ProductBrandId": 5
+    "ProductBrandId": 1
   },
   {
-    "Name": "Core Blue Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 10,
-    "PictureUrl": "images/products/hat-core1.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 2
+    "Name": "English Code Learner 2",
+    "Description": "This is a linear software coding exercise that is designed to help early stage software development students build and test an algorithm. The student constructs a program that allows the player to navigate obstacles to successfully complete the assignment.",
+    "Price": 1,
+    "PictureUrl": "images/products/CodeLearnerEnglishThumbnail2.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
   },
   {
-    "Name": "Green React Woolen Hat",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 8,
-    "PictureUrl": "images/products/hat-react1.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 4
+    "Name": "English Code Learner 3",
+    "Description": "This is a linear software coding exercise that is designed to help early stage software development students build and test an algorithm. The student constructs a program that allows the player to navigate obstacles to successfully complete the assignment.",
+    "Price": 1,
+    "PictureUrl": "images/products/CodeLearnerEnglishThumbnail3.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
   },
   {
-    "Name": "Purple React Woolen Hat",
-    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 15,
-    "PictureUrl": "images/products/hat-react2.png",
-    "ProductTypeId": 2,
-    "ProductBrandId": 4
+    "Name": "English Code Learner 4",
+    "Description": "This is a linear software coding exercise that is designed to help early stage software development students build and test an algorithm. The student constructs a program that allows the player to navigate obstacles to successfully complete the assignment.",
+    "Price": 1,
+    "PictureUrl": "images/products/CodeLearnerEnglishThumbnail4.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
   },
   {
-    "Name": "Blue Code Gloves",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 18,
-    "PictureUrl": "images/products/glove-code1.png",
-    "ProductTypeId": 4,
+    "Name": "English Code Learner 5",
+    "Description": "This is a linear software coding exercise that is designed to help early stage software development students build and test an algorithm. The student constructs a program that allows the player to navigate obstacles to successfully complete the assignment.",
+    "Price": 1,
+    "PictureUrl": "images/products/CodeLearnerEnglishThumbnail5.png",
+    "ProductTypeId": 1,
+    "ProductBrandId": 1
+  },
+  {
+    "Name": "Bloques con Animales",
+    "Description": "Con este juego el estudiante practica deletreo y relaciones de las formas con las palabras.",
+    "Price": 1,
+    "PictureUrl": "images/products/deletrandoranimalesthumbnail.png",
+    "ProductTypeId": 1,
     "ProductBrandId": 3
   },
   {
-    "Name": "Green Code Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 15,
-    "PictureUrl": "images/products/glove-code2.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 3
-  },
-  {
-    "Name": "Purple React Gloves",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-    "Price": 16,
-    "PictureUrl": "images/products/glove-react1.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Green React Gloves",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14,
-    "PictureUrl": "images/products/glove-react2.png",
-    "ProductTypeId": 4,
-    "ProductBrandId": 4
-  },
-  {
-    "Name": "Redis Red Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 250,
-    "PictureUrl": "images/products/boot-redis1.png",
-    "ProductTypeId": 3,
+    "Name": "Contenido para imprimir Premium (Jardín)",
+    "Description": "Ejemplo de grupos de hojas de trabajo para estudiantes pequeños.",
+    "Price": 1,
+    "PictureUrl": "images/products/gridstylepdfcontentthumbnail.jpg",
+    "ProductTypeId": 2,
     "ProductBrandId": 6
   },
   {
-    "Name": "Core Red Boots",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 189.99,
-    "PictureUrl": "images/products/boot-core2.png",
-    "ProductTypeId": 3,
+    "Name": "Aprendiendo las Figuras",
+    "Description": "Este divertido juego de juego enseña a los estudiantes a reconocer las formas geométricas y su ortografía. Una voz introductoria describe la forma y solicita al alumno que nombre y deletree el nombre de la figura.",
+    "Price": 1,
+    "PictureUrl": "images/products/learningshapesthumbnail.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 3
+  },
+  {
+    "Name": "Luces lógicas",
+    "Description": "Este es un juego de lógica divertido y desafiante donde el estudiante tiene la tarea de crear un circuito cerrado que conecta y enciende todas las luces disponibles. Hay cuatro niveles de habilidad diferentes para los desafíos de circuitos básicos, intermedios y avanzados.",
+    "Price": 1,
+    "PictureUrl": "images/products/logiclightsthumbnail.jpg",
+    "ProductTypeId": 1,
     "ProductBrandId": 2
   },
   {
-    "Name": "Core Purple Boots",
-    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 199.99,
-    "PictureUrl": "images/products/boot-core1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 2
+    "Name": "Más Matemáticas",
+    "Description": "Compite con el tiempo y utiliza la adición para resolver para cada número con cualquier combinación de bloques de números para ganar más tiempo. Es como Tetris con matemáticas!",
+    "Price": 1,
+    "PictureUrl": "images/products/mathcandycrushthumbnail.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 6
   },
   {
-    "Name": "Angular Purple Boots",
-    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 150,
-    "PictureUrl": "images/products/boot-ang2.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 1
+    "Name": "Genio en matemáticas",
+    "Description": "Seleccionar la operación correcta para resolver la ecuación a tiempo.",
+    "Price": 1,
+    "PictureUrl": "images/products/mathgenius_4operators_thumbnail.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 6
   },
   {
-    "Name": "Angular Blue Boots",
-    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 180,
-    "PictureUrl": "images/products/boot-ang1.png",
-    "ProductTypeId": 3,
-    "ProductBrandId": 1
+    "Name": "Resuelve Matemáticas",
+    "Description": "Utiliza combinaciones de operaciones matemáticas para cada nivel para lograr la respuesta en el otro lado del signo igual.",
+    "Price": 1,
+    "PictureUrl": "images/products/mathsolvethumbnail.jpg",
+    "ProductTypeId": 1,
+    "ProductBrandId": 6
+  },
+  {
+    "Name": "Contenido para imprimir Premium (Primer grado)",
+    "Description": "Ejemplo de grupos de hojas de trabajo para estudiantes pequeños.",
+    "Price": 1,
+    "PictureUrl": "images/products/wormpdfPrintableContent2.jpg",
+    "ProductTypeId": 2,
+    "ProductBrandId": 6
   }
 ]
